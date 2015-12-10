@@ -1,9 +1,0 @@
-extends layout
-
-block content
-    h1.
-        User List
-    ul
-        each bookmark, i in list
-            li
-                a(href="#{bookmark.created}")= bookmark.title
