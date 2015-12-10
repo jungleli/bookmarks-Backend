@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bookmarks</title>
+    <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css"/>
+
+    <script type="template" id="list">
+         <span>数目为 ：<%= num %> </span>
+        <% _.each(bookmarks, function(bookmark) { %>
+        <li>
+            <%=bookmark.title%>
+            <span class="date">Created @ <%= bookmark.created %></span>
+        </li>
+        <% }); %>
+    </script>
+
+    <script type="template" id="tpl">
+
+        <% _.each(datas, function (item) { %>
+        当前<%= item.page %>/<%= item.totalPage %>页，共<%= item.totalNum %>条
+        <button click="home()">首页</button>
+        <button click="prev()">上页</button>
+        <button click="next()">下页</button>
+        <button click="tail()">尾页</button>
+        跳转到
+        <input id="gotoNum" type="text" style="width:20px;height:20px;margin:0px;padding:0px;" value="1"/>页
+        <button click="goto()">跳转</button>
+
+        <% }); %>
+
+    </script>
+
+
+</head>
+<body>
+
+
+<section class="content">
+    <div class="container">
+        <div id="addBookmark">
+            <input type="text" id="inputTitle" placeholder="Title"/>
+            <br/>
+            <input type="text" id="inputURL" placeholder="URL"/>
+            <br/>
+            <button id="AddBookmark">Add User</button>
+        </div>
+    </div>
+</section>
+<footer>
+    <p>&copy Copyright By Li Junli</p>
+</footer>
+
+<script src="javascripts/libs/jquery-2.1.4.min.js"></script>
+<script src="javascripts/libs/underscore.js"></script>
+<script src="javascripts/main.js"></script>
+
+
+
+</body>
+</html>
