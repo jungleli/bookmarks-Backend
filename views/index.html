@@ -15,7 +15,7 @@
 
         <% _.each(bookmarks, function(bookmark) {%>
         <li>
-            <a href="#" class="delete" rel="<%= bookmark.id %>">delete</a>
+            <a href="" class="delete" rel="<%= bookmark.id %>">[delete]</a>
             <a href="<%=bookmark.url%>" target="_blank"><%= bookmark.title%></a>
             <span class="date">Created @ <%= bookmark.created %></span>
         </li>
@@ -64,13 +64,13 @@
         <div>
             <a href='#' id="close">[<i class="fa fa-times"></i>]</a>
             <br/>
-            标题：<input type="text" id="inputTitle" placeholder="Title"/>
+            标题：<input type="text" id="inputTitle" placeholder="Title" required/>
             <br/>
             <br/>
-            链接：<input type="text" id="inputURL" placeholder="URL"/>
+            链接：<input type="text" id="inputURL" placeholder="URL" required/>
             <br/>
             <br/>
-            <button id="AddBookmark">增加</button>
+            <input type="submit" id="AddBookmark" value="添加" />
         </div>
     </div>
 </section>
