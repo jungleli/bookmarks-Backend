@@ -4,3 +4,4 @@ node_modules/*
 *.ns
 *.lock
 *.bson
+data/journal/*

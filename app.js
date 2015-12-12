@@ -4,6 +4,11 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var data = require('./data/bookmarks.json');
+
+var mongo = require('mongodb');
+var monk = require('monk');
+var db = monk('localhost:27017/bookmarks');
 
 
 var routes = require('./routes/index');
@@ -47,6 +52,16 @@ if (app.get('env') === 'development') {
     });
   });
 }
+
+
+   var collection = db.get("bookmark");
+   collection.remove({});
+   collection.insert(data, function(error, record){
+    if (error) throw error;
+    console.log("data saved");
+});
+
+
 
 // production error handler
 // no stacktraces leaked to user
