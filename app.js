@@ -58,7 +58,7 @@ var collection = db.get("bookmark");
    collection.remove({});
    collection.insert(data, function(error, record){
     if (error) throw error;
-    console.log("data saved");
+    console.log("data reseted");
 });
 
 

@@ -127,6 +127,10 @@ footer {
         color:#190BD4;
 }
 
+a{
+    cursor: pointer;
+}
+
 #next,#pre,.pageNav{
     float:right;
 }

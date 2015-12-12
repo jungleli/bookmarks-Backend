@@ -15,7 +15,7 @@
 
         <% _.each(bookmarks, function(bookmark) {%>
         <li>
-            <a href="" class="delete" rel="<%= bookmark.id %>" title="<%= bookmark.title %>">[delete]</a>
+            <a class="delete" rel="<%= bookmark.id %>" title="<%= bookmark.title %>">[delete]</a>
             <a href="<%=bookmark.url%>" target="_blank"><%= bookmark.title%></a>
             <span class="date">Created @ <%= bookmark.created %></span>
         </li>
