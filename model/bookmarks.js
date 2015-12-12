@@ -30,10 +30,7 @@ module.exports = {
 	    var collection = db.get('bookmark');
 	    
 	    var itemToDelete = req.params.id  || req.query.id;
-	    // console.log(itemToDelete);
 	    collection.remove({ '_id' : itemToDelete }, function(err) {
-	    	// res.send(result);
-	    	// console.log(msg);
 	    	console.log(err);
 	        res.send((err === null) ? { status:'success',msg: 'Deleted success!' }
                 : {status:'failed', msg:'Deleted fail! Check the reason ' + err });
@@ -44,7 +41,6 @@ module.exports = {
 	    var collection = db.get('bookmark');
 
 		var param = req.body || req.query || req.params;
-		// console.log(param);
     	collection.insert(param, function(err, result){
         res.send(
             (err === null) ? {status:'success', msg: 'Add success!' }

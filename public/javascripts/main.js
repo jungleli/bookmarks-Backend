@@ -87,19 +87,12 @@ $(function () {
         }
     });
 
-    $('.list').on('click', 'li a.delete', function () {
+    $('.list').on('click', 'li .delete', function () {
         if (confirm("确定删除？")) {
             $.ajax({
                 type: 'DELETE',
                 url: '../delete/' + $(this).attr('rel')
             }).done(function (response) {
-                if (response.status === 'success') {
-                    console.dir(response);
-                    alert("success: " + response.msg);
-                }
-                else {
-                    alert('Fail: ' + response.msg);
-                }
                 loadData(page, rows,$("#search").val().trim());
             });
         }
