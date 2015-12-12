@@ -54,7 +54,7 @@ if (app.get('env') === 'development') {
 }
 
 
-   var collection = db.get("bookmark");
+var collection = db.get("bookmark");
    collection.remove({});
    collection.insert(data, function(error, record){
     if (error) throw error;

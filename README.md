@@ -34,6 +34,6 @@ bookmarks-Backend
 	>cd <project-folder>
 	>npm start
 	```
-5. 打开浏览，启动：
+ 5. 打开浏览，启动：
 
-    http://localhost:3000
+    >http://localhost:3000
